@@ -3,7 +3,13 @@ module.exports = (sequelize, dataTypes) => {
         email: {
             type: dataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate: {
+                len: {
+                    args: 1,
+                    msg: "Empty e-mail."
+                }
+            }
         },
         street_name: {
             type: dataTypes.STRING,
