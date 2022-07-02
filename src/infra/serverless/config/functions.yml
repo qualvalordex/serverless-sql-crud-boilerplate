@@ -13,3 +13,11 @@ readUser:
         path: user
         method: get
         private: true
+
+changeUser:
+  handler: src/controllers/user/update-user.updateUser
+  events:
+    - http:
+        path: user
+        method: patch
+        private: true
