@@ -14,10 +14,18 @@ readUser:
         method: get
         private: true
 
-changeUser:
+updateUser:
   handler: src/controllers/user/update-user.updateUser
   events:
     - http:
         path: user
         method: patch
+        private: true
+
+deleteUser:
+  handler: src/controllers/user/delete-user.deleteUser
+  events:
+    - http:
+        path: user
+        method: delete
         private: true
