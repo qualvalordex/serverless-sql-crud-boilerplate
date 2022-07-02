@@ -1,7 +1,15 @@
-createAddress:
+createUser:
   handler: src/controllers/user/create-user.createUser
   events:
     - http:
-        path: address
+        path: user
         method: post
+        private: true
+
+readUser:
+  handler: src/controllers/user/read-user.readUser
+  events:
+    - http:
+        path: user
+        method: get
         private: true
