@@ -1,0 +1,6 @@
+service: my-service-name # Renomear este campo de acordo com o nome do seu serviço
+
+provider: ${file(./src/infra/serverless/config/provider.yml)}
+functions: ${file(./src/infra/serverless/config/functions.yml)}
+plugins: ${file(./src/infra/serverless/config/plugins.yml)}
+custom: ${file(./src/infra/serverless/config/custom.yml)}
