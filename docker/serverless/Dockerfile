@@ -1,6 +1,6 @@
 FROM node:gallium-alpine
 
-RUN yarn add global serverless
+RUN npm install -g serverless
 
 WORKDIR /home/serverless
 

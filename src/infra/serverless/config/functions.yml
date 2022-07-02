@@ -1,0 +1,6 @@
+createAddress:
+  handler: src/controllers/address/create-address.createAddress
+  events:
+    - http:
+        path: address
+        method: post
