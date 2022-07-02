@@ -4,3 +4,4 @@ createAddress:
     - http:
         path: address
         method: post
+        private: true

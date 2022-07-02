@@ -28,4 +28,8 @@ vpc:
     - subnet-5b205912
     - subnet-1ba2e440
 
+# Definição do nome da chave de segurança do serviço
+apiKeys:
+  - ${self:provider.stage}-sqlCrudBoilerplateKey
+
 environment: ${file(./env/env.${opt:stage}.yml)}
