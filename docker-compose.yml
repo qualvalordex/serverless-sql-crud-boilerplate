@@ -14,7 +14,8 @@ services:
     
   database:
     container_name: sls-database
-    image: arm64v8/mysql:oracle
+    image: arm64v8/mysql:oracle # Essa imagem docker serve apenas para computadores com processador ARM. Caso use processador x86, usar a imagem da linha abaixo.
+    # image: mysql:latest
     restart: always
     ports:
       - "3306:3306"
