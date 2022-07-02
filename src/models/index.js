@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const config = require("../infra/database/config/config")[process.env.NODE_ENV || "loc"];
+const config = require("../infrastructure/database/config/config")[process.env.NODE_ENV || "loc"];
 
 console.log(config);
 
