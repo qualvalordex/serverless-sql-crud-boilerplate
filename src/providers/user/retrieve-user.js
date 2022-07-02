@@ -14,7 +14,7 @@ async function retrieveUser({ email }) {
         if (user) {
             return httpResponse.OK(user);
         } else {
-            return httpResponse.notFound("Your search failed. Please verify your request and try again.");
+            return httpResponse.notFound("User not found.");
         }
     } catch (error) {
         console.log(error);
