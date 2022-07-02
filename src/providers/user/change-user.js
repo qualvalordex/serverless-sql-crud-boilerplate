@@ -20,6 +20,7 @@ async function changeUser(body) {
         }
     } catch (error) {
         console.log(error);
+        if (error.name === "SequelizeValidationError") return httpResponse.badRequest(error.message);
         return httpResponse.serverError(error.message);
     }
 }

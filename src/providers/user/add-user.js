@@ -23,7 +23,7 @@ async function addUser({ email, cep }) {
         
         return httpResponse.created(newUser); 
     } catch (error) {
-        console.log(error);
+        if (error.name === "SequelizeValidationError") return httpResponse.badRequest(error.message);
         return httpResponse.serverError(error.message);
     }
 }

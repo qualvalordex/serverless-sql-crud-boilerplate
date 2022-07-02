@@ -27,7 +27,13 @@ module.exports = (sequelize, dataTypes) => {
         },
         postal_code: {
             type: dataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: {
+                    args: 1,
+                    msg: "Empty postal code."
+                }
+            }
         }
     });
 
