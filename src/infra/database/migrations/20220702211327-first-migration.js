@@ -2,12 +2,17 @@
 
 module.exports = {
     async up (queryInterface, Sequelize) {
-        return queryInterface.createTable("addresses", {
+        return queryInterface.createTable("users", {
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true
+            },
+            email: {
+                type: Sequelize.DataTypes.STRING,
+                allowNull: false,
+                unique: true
             },
             street_name: {
                 type: Sequelize.DataTypes.STRING,
@@ -39,6 +44,6 @@ module.exports = {
     },
 
     async down (queryInterface) {
-        return queryInterface.dropTable("addresses");
+        return queryInterface.dropTable("users");
     }
 };

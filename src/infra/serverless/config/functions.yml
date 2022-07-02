@@ -1,5 +1,5 @@
 createAddress:
-  handler: src/controllers/address/create-address.createAddress
+  handler: src/controllers/user/create-user.createUser
   events:
     - http:
         path: address

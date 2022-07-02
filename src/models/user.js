@@ -1,5 +1,10 @@
 module.exports = (sequelize, dataTypes) => {
-    const Address = sequelize.define("address", {
+    const User = sequelize.define("user", {
+        email: {
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
         street_name: {
             type: dataTypes.STRING,
         },
@@ -20,5 +25,5 @@ module.exports = (sequelize, dataTypes) => {
         }
     });
 
-    return Address;
+    return User;
 };

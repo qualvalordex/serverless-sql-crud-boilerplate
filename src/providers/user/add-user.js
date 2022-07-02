@@ -2,15 +2,16 @@ const db = require("../../models");
 const client = require("../../clients/cep-blds-tools");
 const httpResponse = require("../../common/httpResponse");
 
-const Address = db.Address;
+const User = db.User;
 
-async function addAddress(cep) {
+async function addUser({ email, cep }) {
     try {
         const res = await client.getAddressByCep(cep);
         
         if (res.code != 200) return httpResponse.genericResponse(res.code, res.message);
 
-        const address = {
+        const user = {
+            email,
             street_name: res.result.logradouro,
             district: res.result.bairro,
             city: res.result.localidade,
@@ -18,13 +19,13 @@ async function addAddress(cep) {
             postal_code: res.result.cep
         };
 
-        const newAddress = await Address.create(address);
+        const newUser = await User.create(user);
         
-        return httpResponse.created(newAddress); 
+        return httpResponse.created(newUser); 
     } catch (error) {
         console.log(error);
         return httpResponse.serverError(error.message);
     }
 }
 
-module.exports = { addAddress };
+module.exports = { addUser };

@@ -13,6 +13,6 @@ const sequelize = new Sequelize(
     }
 );
 
-const Address = require("./address")(sequelize, Sequelize.DataTypes);
+const User = require("./user")(sequelize, Sequelize.DataTypes);
 
-module.exports = { Address };
+module.exports = { User };
