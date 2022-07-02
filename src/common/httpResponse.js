@@ -5,6 +5,13 @@ module.exports.OK = (content) => {
     };
 };
 
+module.exports.created = (content) => {
+    return {
+        statusCode: 201,
+        body: JSON.stringify(content)
+    };
+};
+
 module.exports.badRequest = (message) => {
     return {
         statusCode: 400,
