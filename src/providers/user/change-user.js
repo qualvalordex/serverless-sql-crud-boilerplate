@@ -7,7 +7,7 @@ async function changeUser(body) {
     try {
         const { email } = body;
 
-        if(await User.findAll({ where: { email } })) {
+        if(await User.findAll({ where: { email } }).length) {
             await User.update(body, {
                 where: { email }
             });

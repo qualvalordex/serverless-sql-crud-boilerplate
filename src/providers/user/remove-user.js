@@ -7,7 +7,7 @@ async function removeUser(body) {
     try {
         const { email } = body;
 
-        if(await User.findAll({ where: { email } })) {
+        if(await User.findAll({ where: { email } }).length) {
             await User.destroy({ where: { email } });
 
             return httpResponse.OK({ message: "User removed." });

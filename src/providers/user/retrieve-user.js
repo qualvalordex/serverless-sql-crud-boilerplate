@@ -11,9 +11,10 @@ async function retrieveUser({ email }) {
             }
         });
 
-        if (user) {
+        if (user.length) {
             return httpResponse.OK(user);
         } else {
+            console.log("ENTROU AQUIIIII");
             return httpResponse.notFound("User not found.");
         }
     } catch (error) {
