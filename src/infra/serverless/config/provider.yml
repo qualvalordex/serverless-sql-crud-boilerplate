@@ -1,0 +1,31 @@
+# Define o nome do provedor de nuvem que será utilizado no projeto
+name: aws
+
+# Define qual ambiente será utilizado para este serviço. Caso não seja indicado um ambiente, o padrão é local.
+stage: ${opt:stage, 'local'}
+
+# Define a versão do NodeJS que será utilizada. A AWS adicionou suporte nas Lambdas para a versão 16 do NodeJS.
+runtime: nodejs16.x
+
+# Define a região em que será feita a publicação do serviço
+region: sa-east-1
+
+# Indica para que a AWS versione as funções Lambda. Útil para restauração de versões mais antigas.
+versionFunctions: true
+
+# Define o tamanho de memória das funções Lambda
+memorySize: 128
+
+# Define o tempo de execução das funções Lambda
+timeout: 30
+
+# Define configurações de rede para a Lambda na AWS
+vpc:
+  securityGroupIds:
+    - sg-98eae2d1 # Substituir de acordo com as configurações da sua conta / Grupo de segurança padrão
+  subnetIds:
+    - subnet-00225966 # Substituir cada sub-rede de acordo com as configurações da sua conta / Sub-redes padrão
+    - subnet-5b205912
+    - subnet-1ba2e440
+
+environment: ${file(./env/env.${opt:stage}.yml)}

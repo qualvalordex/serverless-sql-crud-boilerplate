@@ -1,0 +1,9 @@
+# Define qual será o host padrão quando estiver rodando o projeto localmente
+serverless-offline:
+  host: 0.0.0.0
+  port: 3000
+
+# Define configurações de domínio personalizado
+customDomain:
+  basePath: 'my-service-name-${self:provider.stage}'
+  stage: ${self:provider.stage}

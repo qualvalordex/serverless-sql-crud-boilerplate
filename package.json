@@ -5,6 +5,7 @@
   "author": "Paulo Henrique Rodrigues <qualvalordex@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.19.0"
+    "eslint": "^8.19.0",
+    "serverless-offline": "^8.8.0"
   }
 }
