@@ -1,6 +1,7 @@
 const db = require("../../models");
 const client = require("../../clients/cep-blds-tools");
 const httpResponse = require("../../common/httpResponse");
+const errorHandler = require("../../common/errorHandler");
 
 const User = db.User;
 
@@ -23,8 +24,7 @@ async function addUser({ email, cep }) {
         
         return httpResponse.created(newUser); 
     } catch (error) {
-        if (error.name === "SequelizeValidationError") return httpResponse.badRequest(error.message);
-        return httpResponse.serverError(error.message);
+        return errorHandler(error);
     }
 }
 

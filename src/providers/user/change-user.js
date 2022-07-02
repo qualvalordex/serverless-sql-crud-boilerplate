@@ -1,5 +1,6 @@
 const db = require("../../models");
 const httpResponse = require("../../common/httpResponse");
+const errorHandler = require("../../common/errorHandler");
 
 const User = db.User;
 
@@ -19,9 +20,7 @@ async function changeUser(body) {
             return httpResponse.notFound("User not found.");
         }
     } catch (error) {
-        console.log(error);
-        if (error.name === "SequelizeValidationError") return httpResponse.badRequest(error.message);
-        return httpResponse.serverError(error.message);
+        return errorHandler(error);
     }
 }
 
