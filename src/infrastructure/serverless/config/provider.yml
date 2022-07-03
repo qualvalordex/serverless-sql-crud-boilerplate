@@ -22,11 +22,11 @@ timeout: 30
 # Define configurações de rede para a Lambda na AWS
 vpc:
   securityGroupIds:
-    - sg-98eae2d1 # Substituir de acordo com as configurações da sua conta / Grupo de segurança padrão
+    - sg-00762074e4c6f0962 # Substituir de acordo com as configurações da sua conta / Grupo de segurança padrão
   subnetIds:
-    - subnet-00225966 # Substituir cada sub-rede de acordo com as configurações da sua conta / Sub-redes padrão
-    - subnet-5b205912
-    - subnet-1ba2e440
+    - subnet-07e7bbbdddb84e97b # Substituir cada sub-rede de acordo com as configurações da sua conta / Sub-redes padrão
+    - subnet-029f93b5052d69350
+    - subnet-067e0c696c99c40f3
 
 # Definição do nome da chave de segurança do serviço
 apiKeys:
