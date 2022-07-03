@@ -27,7 +27,7 @@ jobs:
         aws-region: sa-east-1
 
      - name: Add database configuration to environment
-       run: 'echo ${{ github.event.inputs.stage }}_database_config > env/env.${{ github.event.inputs.stage }}.yml'
+       run: 'echo "$${{ github.event.inputs.stage }}_database_config" > env/env.${{ github.event.inputs.stage }}.yml'
        env:
         prd_database_config: ${{ secrets.PROD_DATABASE_CONFIGURATION }}
         dev_database_config: ${{ secrets.DEV_DATABASE_CONFIGURATION }}
