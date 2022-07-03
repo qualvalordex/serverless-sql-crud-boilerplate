@@ -39,4 +39,4 @@ jobs:
        run: yarn
 
      - name: Run deploy
-       run:  sls deploy -s ${{ github.event.inputs.ambiente }}
+       run:  sls deploy -s ${{ github.event.inputs.stage }}
